@@ -39,7 +39,7 @@ public class PlacementScript : MonoBehaviour
 
         if(buildMode == true)
         {
-            allTablesInScene = GameObject.FindGameObjectsWithTag("Table");
+            allTablesInScene = GameObject.FindGameObjectsWithTag("Rack");
             foreach (GameObject table in allTablesInScene)
             {
                 table.layer = 2;
@@ -47,7 +47,7 @@ public class PlacementScript : MonoBehaviour
         }
         else if(buildMode == false)
         {
-            allTablesInScene = GameObject.FindGameObjectsWithTag("Table");
+            allTablesInScene = GameObject.FindGameObjectsWithTag("Rack");
             foreach (GameObject table in allTablesInScene)
             {
                 table.layer = 0;
@@ -77,13 +77,13 @@ public class PlacementScript : MonoBehaviour
                     {
                         switch (tableName)
                         {
-                            case "Table1":
+                            case "Rack1":
                                 Instantiate(tabelprefabs[0], placePosition, Quaternion.Euler(0f, rotation, 0f));
                                 tabelprefabsBlueprints[0].SetActive(false);
                                 buildMode = false;
                                 break;
 
-                            case "Table2":
+                            case "Rack2":
                                 Instantiate(tabelprefabs[1], placePosition, Quaternion.Euler(0f, rotation, 0f));
                                 tabelprefabsBlueprints[1].SetActive(false);
                                 buildMode = false;
@@ -104,7 +104,7 @@ public class PlacementScript : MonoBehaviour
     }
     public void placeTabel()
     {
-        tableName = "Table1";
+        tableName = "Rack1";
         if(buildMode == false)
         {
             buildMode = true;
@@ -120,7 +120,7 @@ public class PlacementScript : MonoBehaviour
     }
     public void placeTabel2()
     {
-        tableName = "Table2";
+        tableName = "Rack2";
         if (buildMode == false)
         {
             buildMode = true;

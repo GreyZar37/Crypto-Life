@@ -23,18 +23,20 @@ public class PlayerInventory : MonoBehaviour
        
     }
 
-   public void equipGpuLvl1()
+    public void gpuLvlOne()
     {
-        refToRack.GetComponent<RackInventory>().equipGpuSlotOne(gpuSprites[0], "gpuLvlOne");
+        refToRack.GetComponent<ObjectStats>().equipGpuSlotOne(gpuSprites[0], "gpuLvlOne");
         refToRack.transform.GetChild(0).gameObject.SetActive(false);
         refToRack.tag = "Untagged";
     }
-    public void equipGpuLvl2()
+    public void gpuLvlTwo()
     {
-        refToRack.GetComponent<RackInventory>().equipGpuSlotOne(gpuSprites[1], "gpuLvlTwo");
+        refToRack.GetComponent<ObjectStats>().equipGpuSlotOne(gpuSprites[1], "gpuLvlTwo");
         refToRack.transform.GetChild(0).gameObject.SetActive(false);
         refToRack.tag = "Untagged";
+
     }
+
     public void leavePlayerinventory()
     {
         refToRack.transform.GetChild(0).gameObject.SetActive(false);

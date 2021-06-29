@@ -72,7 +72,7 @@ public class BluePrintScript : MonoBehaviour
     }
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.tag == "Table" || collision.gameObject.tag == "Wall")
+        if (collision.gameObject.tag == "Rack" || collision.gameObject.tag == "Wall")
         {
             material.color = redColor;
             PlacementScript.canPlace = false;
@@ -81,7 +81,7 @@ public class BluePrintScript : MonoBehaviour
     
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag == "Table" || collision.gameObject.tag == "Wall")
+        if (collision.gameObject.tag == "Rack" || collision.gameObject.tag == "Wall")
         {
             PlacementScript.canPlace = true;
             material.color = greenColor;

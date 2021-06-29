@@ -11,12 +11,11 @@ GameObject:
   - component: {fileID: 5448583811008132920}
   - component: {fileID: 474407077323397781}
   - component: {fileID: 5685979977600774349}
-  - component: {fileID: -508370343861142713}
   - component: {fileID: 8793779242102786276}
-  - component: {fileID: 4905129049697240263}
+  - component: {fileID: -1639865835530145468}
   m_Layer: 2
   m_Name: Table2
-  m_TagString: Table
+  m_TagString: Rack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,19 +73,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &-508370343861142713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365657315777419805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7692268ab3871044bd1d2fa6407b7d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventorylvl1Prefab: {fileID: 9182380557212560137, guid: 0eb00bde71d07684abe6c23f3aee8910, type: 3}
 --- !u!73398921 &8793779242102786276
 VFXRenderer:
   m_ObjectHideFlags: 0
@@ -127,7 +113,7 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &4905129049697240263
+--- !u!114 &-1639865835530145468
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,10 +122,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1365657315777419805}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 58cfc209aabb74647a6710eb7483f1f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
+  sprite: {fileID: 0}
+  slotOne: {fileID: 0}
+  Income: 0
+  multiplier: 0
 --- !u!1 &1625522133481773181
 GameObject:
   m_ObjectHideFlags: 0
