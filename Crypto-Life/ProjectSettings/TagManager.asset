@@ -5,12 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
-  - Table
   - Wall
   - Blueprint
   - PlayerInventory
   - ActiveRack
   - PlayerInventoryPanel
+  - Rack
   layers:
   - Default
   - TransparentFX
