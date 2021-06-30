@@ -448,11 +448,23 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2079605578}
         m_TargetAssemblyTypeName: PlayerInventory, Assembly-CSharp
-        m_MethodName: gpuLvlTwo
+        m_MethodName: gpuLvlOne
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 5515686413209405686}
+        m_TargetAssemblyTypeName: RackInventory, Assembly-CSharp
+        m_MethodName: loadData
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: ObjectStats, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2530,7 +2542,6 @@ RectTransform:
   m_Children:
   - {fileID: 1852096319}
   - {fileID: 716298031}
-  - {fileID: 1542532245}
   m_Father: {fileID: 2079605577}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2712,6 +2723,7 @@ Transform:
   m_LocalPosition: {x: -192.81506, y: -81.57001, z: -6196.837}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1542532245}
   - {fileID: 2004120773}
   m_Father: {fileID: 691684009}
   m_RootOrder: 1
@@ -3512,7 +3524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7692268ab3871044bd1d2fa6407b7d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorylvl1Prefab: {fileID: 9182380556921831824}
+  inventorylvl1: {fileID: 9182380556921831824}
 --- !u!1 &1156607729
 GameObject:
   m_ObjectHideFlags: 0
@@ -4499,11 +4511,23 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2079605578}
         m_TargetAssemblyTypeName: PlayerInventory, Assembly-CSharp
-        m_MethodName: gpuLvlOne
+        m_MethodName: gpuLvlTwo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 5515686413209405686}
+        m_TargetAssemblyTypeName: RackInventory, Assembly-CSharp
+        m_MethodName: loadData
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: ObjectStats, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4571,12 +4595,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542532244}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -192.81506, y: 80.4458, z: -6196.837}
+  m_LocalPosition: {x: 0, y: 162.01581, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 524024839}
-  m_Father: {fileID: 691684009}
-  m_RootOrder: 2
+  m_Father: {fileID: 716298031}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1571464317
 GameObject:
@@ -6671,7 +6695,7 @@ Transform:
   - {fileID: 528474885}
   - {fileID: 657535986}
   m_Father: {fileID: 716298031}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2014986892
 GameObject:
@@ -7623,6 +7647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refToPlayerInventory: {fileID: 0}
+  slotOne: {fileID: 7851781626349734162}
 --- !u!1 &6277344353705588048
 GameObject:
   m_ObjectHideFlags: 0

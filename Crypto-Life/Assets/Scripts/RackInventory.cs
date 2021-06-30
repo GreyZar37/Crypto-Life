@@ -8,6 +8,8 @@ public class RackInventory : MonoBehaviour
 
     public GameObject refToPlayerInventory;
 
+    public Button slotOne;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +37,7 @@ public class RackInventory : MonoBehaviour
     }
     public void loadData(ObjectStats data)
     {
-        
+        print(data.gpuSprite);
     }
 
 

@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class ObjSelect : MonoBehaviour
 {
 
-    public GameObject inventorylvl1Prefab;
+    public GameObject inventorylvl1;
   
 
     // Start is called before the first frame update
@@ -34,9 +34,8 @@ public class ObjSelect : MonoBehaviour
                         
                     else
                     {
-                        Debug.DrawLine(ray.origin, hit.point, Color.red, 1);
-                        inventorylvl1Prefab.transform.GetChild(0).gameObject.SetActive(true);
-                        inventorylvl1Prefab.GetComponent<RackInventory>().loadData(hit.transform.GetComponent<ObjectStats>());
+                        inventorylvl1.transform.GetChild(0).gameObject.SetActive(true);
+                        inventorylvl1.GetComponent<RackInventory>().loadData(hit.transform.GetComponent<ObjectStats>());
                     }
                     
                 }

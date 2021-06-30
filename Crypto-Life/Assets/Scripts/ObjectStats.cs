@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class ObjectStats : MonoBehaviour
 {
 
-    public Button slotOne;
+    public Sprite gpuSprite;
+    public string gpuName;
 
     public float Income;
     public float multiplier;
@@ -26,7 +27,11 @@ public class ObjectStats : MonoBehaviour
 
     public void equipGpuSlotOne(Sprite sprite, string gpu_name)
     {
-        slotOne.image.sprite = sprite;
+        gpuSprite = sprite;
+        gpuName = gpu_name;
+
+        print(gpuName);
+
         switch (gpu_name)
         {
             case "gpuLvlOne":

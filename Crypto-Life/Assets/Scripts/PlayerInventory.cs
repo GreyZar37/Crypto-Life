@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -17,29 +18,44 @@ public class PlayerInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        refToRack = GameObject.FindGameObjectWithTag("ActiveRack");
 
-       
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (Physics.Raycast(ray, out hit, 100))
+            {
+                if (hit.transform.tag == "Rack")
+                {
+                    if (EventSystem.current.IsPointerOverGameObject())
+                    {
+                        return;
+                    }
+
+                    else
+                    {
+                        refToRack = hit.transform.gameObject;
+                    }
+
+                }
+
+            }
+
+        }
+
+
     }
 
     public void gpuLvlOne()
     {
         refToRack.GetComponent<ObjectStats>().equipGpuSlotOne(gpuSprites[0], "gpuLvlOne");
-        refToRack.transform.GetChild(0).gameObject.SetActive(false);
-        refToRack.tag = "Untagged";
+       
     }
     public void gpuLvlTwo()
     {
         refToRack.GetComponent<ObjectStats>().equipGpuSlotOne(gpuSprites[1], "gpuLvlTwo");
-        refToRack.transform.GetChild(0).gameObject.SetActive(false);
-        refToRack.tag = "Untagged";
 
     }
 
-    public void leavePlayerinventory()
-    {
-        refToRack.transform.GetChild(0).gameObject.SetActive(false);
-        refToRack.tag = "Untagged";
-    }
 }
