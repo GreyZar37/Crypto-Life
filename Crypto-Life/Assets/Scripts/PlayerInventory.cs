@@ -49,6 +49,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void gpuLvlOne()
     {
+        print("GPU");
         refToRack.GetComponent<ObjectStats>().equipGpuSlotOne(gpuSprites[0], "gpuLvlOne");
        
     }

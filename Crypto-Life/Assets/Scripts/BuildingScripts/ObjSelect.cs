@@ -35,7 +35,14 @@ public class ObjSelect : MonoBehaviour
                     else
                     {
                         inventorylvl1.transform.GetChild(0).gameObject.SetActive(true);
-                        inventorylvl1.GetComponent<RackInventory>().loadData(hit.transform.GetComponent<ObjectStats>());
+
+                        Transform g = hit.transform;
+                        print(g.name);
+                        ObjectStats t = g.GetComponent<ObjectStats>();
+                        print("T NULL: " + (t == null));
+
+                        print("T TYPE: " + t.GetType());
+                        inventorylvl1.GetComponent<RackInventory>().loadData(t);
                     }
                     
                 }

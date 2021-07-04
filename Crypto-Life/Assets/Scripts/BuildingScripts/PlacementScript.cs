@@ -22,16 +22,13 @@ public class PlacementScript : MonoBehaviour
 
     public GameObject[] allTablesInScene;
 
-    string tableName;
-    
+    string rackName;
+
+    //
+    GameObject currentBuilding;
 
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -75,7 +72,7 @@ public class PlacementScript : MonoBehaviour
                     placePosition = hitPosition.point;
                     if(canPlace == true)
                     {
-                        switch (tableName)
+                        switch (rackName)
                         {
                             case "Rack1":
                                 Instantiate(tabelprefabs[0], placePosition, Quaternion.Euler(0f, rotation, 0f));
@@ -104,7 +101,7 @@ public class PlacementScript : MonoBehaviour
     }
     public void placeTabel()
     {
-        tableName = "Rack1";
+        rackName = "Rack1";
         if(buildMode == false)
         {
             buildMode = true;
@@ -120,7 +117,7 @@ public class PlacementScript : MonoBehaviour
     }
     public void placeTabel2()
     {
-        tableName = "Rack2";
+        rackName = "Rack2";
         if (buildMode == false)
         {
             buildMode = true;
@@ -133,5 +130,10 @@ public class PlacementScript : MonoBehaviour
             Destroy(GameObject.FindWithTag("Blueprint"));
             buildMode = false;
         }
+    }
+    public void startRackPlacement(ServerRack data)
+    {
+        currentBuilding = Instantiate(data.rackPrefab);
+        buildMode = true;
     }
 }

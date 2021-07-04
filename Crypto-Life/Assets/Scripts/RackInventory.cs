@@ -37,6 +37,7 @@ public class RackInventory : MonoBehaviour
     }
     public void loadData(ObjectStats data)
     {
+        print("LOAD DATA YO. DATANULL: " + (data == null));
         print(data.gpuSprite);
     }
 
