@@ -5715,11 +5715,11 @@ MonoBehaviour:
   m_Content: {fileID: 755509406}
   m_Horizontal: 0
   m_Vertical: 1
-  m_MovementType: 1
+  m_MovementType: 2
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 25
   m_Viewport: {fileID: 1183380006}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
@@ -7177,6 +7177,10 @@ PrefabInstance:
     - target: {fileID: 9121978999244445512, guid: d69d0ba43edea0745898427a6c548ce6, type: 3}
       propertyPath: m_Name
       value: InventoryLvl1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121978999244445512, guid: d69d0ba43edea0745898427a6c548ce6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d69d0ba43edea0745898427a6c548ce6, type: 3}
