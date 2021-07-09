@@ -70,6 +70,9 @@ public class BluePrintScript : MonoBehaviour
 
        
     }
+
+
+
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag == "Rack" || collision.gameObject.tag == "Wall")

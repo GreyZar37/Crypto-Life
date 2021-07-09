@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58cfc209aabb74647a6710eb7483f1f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  slotOne: {fileID: 0}
+  gpuSprite: {fileID: 0}
+  gpuName: 
   Income: 0
   multiplier: 0
 --- !u!1 &1625522133481773181

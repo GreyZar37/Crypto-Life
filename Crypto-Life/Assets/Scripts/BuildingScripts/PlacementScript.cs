@@ -5,52 +5,51 @@ using UnityEngine;
 public class PlacementScript : MonoBehaviour
 {
 
-    [Header("Position")]
+   [Header("Position")]
     public Vector3 placePosition;
     public static float rotation;
 
     public RaycastHit hitPosition;
 
     [Header("Placement")]
-    public bool buildMode;
+    public static bool buildMode;
     public static bool canPlace = true;
 
     [Header("Prefabs")]
+    public GameObject[] allRacksInScene;
 
-    public GameObject[] tabelprefabs;
-    public GameObject[] tabelprefabsBlueprints;
-
-    public GameObject[] allTablesInScene;
-
-    string rackName;
-
-    //
-    GameObject currentBuilding;
-
-
-
+    ServerRack currentRackPrefab;
 
     // Update is called once per frame
     void Update()
     {
 
-        if(buildMode == true)
+     
+        placementFunction();
+
+
+    }
+
+    public void placementFunction()
+    {
+
+        if (buildMode == true)
         {
-            allTablesInScene = GameObject.FindGameObjectsWithTag("Rack");
-            foreach (GameObject table in allTablesInScene)
+            allRacksInScene = GameObject.FindGameObjectsWithTag("Rack");
+            foreach (GameObject table in allRacksInScene)
             {
                 table.layer = 2;
             }
         }
-        else if(buildMode == false)
+        else if (buildMode == false)
         {
-            allTablesInScene = GameObject.FindGameObjectsWithTag("Rack");
-            foreach (GameObject table in allTablesInScene)
+            allRacksInScene = GameObject.FindGameObjectsWithTag("Rack");
+            foreach (GameObject table in allRacksInScene)
             {
                 table.layer = 0;
             }
         }
-        
+
 
 
 
@@ -58,82 +57,31 @@ public class PlacementScript : MonoBehaviour
         {
             rotation = 90f;
         }
-        else if(Input.GetKeyDown(KeyCode.R) && rotation == 90)
+        else if (Input.GetKeyDown(KeyCode.R) && rotation == 90)
         {
             rotation = 0f;
         }
 
-        if (Input.GetMouseButtonDown(0) && buildMode ==  true)
+        if (Input.GetMouseButtonDown(0) && buildMode == true)
         {
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),out hitPosition))
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitPosition))
             {
-                if(hitPosition.transform.tag == "Floor")
+                if (hitPosition.transform.tag == "Floor")
                 {
                     placePosition = hitPosition.point;
-                    if(canPlace == true)
+                    if (canPlace == true)
                     {
-                        switch (rackName)
-                        {
-                            case "Rack1":
-                                Instantiate(tabelprefabs[0], placePosition, Quaternion.Euler(0f, rotation, 0f));
-                                tabelprefabsBlueprints[0].SetActive(false);
-                                buildMode = false;
-                                break;
-
-                            case "Rack2":
-                                Instantiate(tabelprefabs[1], placePosition, Quaternion.Euler(0f, rotation, 0f));
-                                tabelprefabsBlueprints[1].SetActive(false);
-                                buildMode = false;
-                                break;
-                            
-                            default:
-                                break;
-                        }
-                      
-                        
+                        Instantiate(currentRackPrefab.rackPrefab, placePosition, Quaternion.Euler(0f, rotation, 0f));
+                        buildMode = false;
                     }
-                         
+
                 }
 
             }
         }
-       
     }
-    public void placeTabel()
+    public void placementInfo(ServerRack data)
     {
-        rackName = "Rack1";
-        if(buildMode == false)
-        {
-            buildMode = true;
-            tabelprefabsBlueprints[0].SetActive(true);
-            Instantiate(tabelprefabsBlueprints[0]);
-        }
-        else if(buildMode == true)
-        {
-            Destroy(GameObject.FindWithTag("Blueprint"));
-            buildMode = false;
-        }
-      
-    }
-    public void placeTabel2()
-    {
-        rackName = "Rack2";
-        if (buildMode == false)
-        {
-            buildMode = true;
-            tabelprefabsBlueprints[1].SetActive(true);
-            Instantiate(tabelprefabsBlueprints[1]);
-            
-        }
-        else if (buildMode == true)
-        {
-            Destroy(GameObject.FindWithTag("Blueprint"));
-            buildMode = false;
-        }
-    }
-    public void startRackPlacement(ServerRack data)
-    {
-        currentBuilding = Instantiate(data.rackPrefab);
-        buildMode = true;
+        currentRackPrefab = data;
     }
 }

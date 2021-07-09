@@ -2340,7 +2340,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.000061035156}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: -719.5169}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &755509407
 MonoBehaviour:
@@ -2927,14 +2927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placePosition: {x: 0, y: 0, z: 0}
-  buildMode: 0
-  tabelprefabs:
-  - {fileID: 6144336939812508104, guid: c4e1dffd0308a1c478352c98b0f3a99c, type: 3}
-  - {fileID: 1365657315777419805, guid: 31ab6c3d3be39414cab1ae3f4bee4486, type: 3}
-  tabelprefabsBlueprints:
-  - {fileID: 34061772805218245, guid: 5513459f3fed8da44925e8193a9dbbbc, type: 3}
-  - {fileID: 8733787315481531849, guid: b9719ae6b90030a42b0edad00542032a, type: 3}
-  allTablesInScene: []
+  allRacksInScene: []
 --- !u!4 &985946606
 Transform:
   m_ObjectHideFlags: 0
@@ -2961,7 +2954,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0d5f72f1d4bbd944a9b3a844369dc1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentStats: {fileID: 0}
 --- !u!114 &985946608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2987,18 +2979,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbee7eeaaa33bee42b0ca5ff8d08406d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolers:
-  - name: 
-    price: 0
-    id: 0
-    icon: {fileID: 0}
-    powerUsage: 0
-    heatReduction: 0
+  coolers: []
   powerSources: []
   miners: []
   serverRacks: []
-  icon: {fileID: 21300000, guid: d055df873224a6e488661ceb66304eb6, type: 3}
-  rackPrefab: {fileID: 0}
+  rackBlueprintPrefabs:
+  - {fileID: 8733787315481531849, guid: b9719ae6b90030a42b0edad00542032a, type: 3}
+  - {fileID: 34061772805218245, guid: 5513459f3fed8da44925e8193a9dbbbc, type: 3}
+  rackPrefabs:
+  - {fileID: 1365657315777419805, guid: 31ab6c3d3be39414cab1ae3f4bee4486, type: 3}
+  - {fileID: 6144336939812508104, guid: c4e1dffd0308a1c478352c98b0f3a99c, type: 3}
+  rackIcons:
+  - {fileID: 21300000, guid: d055df873224a6e488661ceb66304eb6, type: 3}
+  - {fileID: 21300000, guid: 7bbb6571b1ef0b044a03a5eeb8a73074, type: 3}
+  coolersIcons: []
+  powerSourcesIcons: []
+  gpuSourcesIcons: []
 --- !u!1 &1156607729
 GameObject:
   m_ObjectHideFlags: 0
@@ -3425,7 +3421,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1225923227
 RectTransform:
   m_ObjectHideFlags: 0

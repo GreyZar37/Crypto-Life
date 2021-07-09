@@ -11,9 +11,16 @@ public class ServerRackItem : MonoBehaviour
     public Image rackImage;
     public Button button;
 
+   
+
     ServerRack serverRack;
 
-   public void initialize(ServerRack data)
+    private void Start()
+    {
+        
+    }
+
+    public void initialize(ServerRack data)
     {
         serverRack = data;
         priceText.text = string.Format("Buy(${0})", serverRack.price);
@@ -26,6 +33,20 @@ public class ServerRackItem : MonoBehaviour
 
     void onClick()
     {
-         
+        // TODO Optimere dette senere
+
+        GameObject.FindObjectOfType<PlacementScript>().placementInfo(serverRack);
+
+        if (PlacementScript.buildMode == false)
+        {
+            PlacementScript.buildMode = true;
+           serverRack.rackBlueprintPrefab.SetActive(true);
+            Instantiate(serverRack.rackBlueprintPrefab);
+        }
+        else if (PlacementScript.buildMode == true)
+        {
+            Destroy(GameObject.FindWithTag("Blueprint"));
+            PlacementScript.buildMode = false;
+        }
     }
 }
