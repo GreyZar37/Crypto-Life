@@ -5,9 +5,7 @@ using UnityEngine.EventSystems;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public GameObject refToRack;
-
-    public Sprite[] gpuSprites;
+    GameObject refToRack;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +34,7 @@ public class PlayerInventory : MonoBehaviour
                     else
                     {
                         refToRack = hit.transform.gameObject;
+                        refToRack.GetComponent<RackInventoryCreator>().refRackInventory.transform.GetChild(0).gameObject.SetActive(true);
                     }
 
                 }
@@ -47,16 +46,6 @@ public class PlayerInventory : MonoBehaviour
 
     }
 
-    public void gpuLvlOne()
-    {
-        print("GPU");
-        refToRack.GetComponent<ObjectStats>().equipGpuSlotOne(gpuSprites[0], "gpuLvlOne");
-       
-    }
-    public void gpuLvlTwo()
-    {
-        refToRack.GetComponent<ObjectStats>().equipGpuSlotOne(gpuSprites[1], "gpuLvlTwo");
-
-    }
+   
 
 }

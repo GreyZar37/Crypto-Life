@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 474407077323397781}
   - component: {fileID: 5685979977600774349}
   - component: {fileID: 8793779242102786276}
-  - component: {fileID: -1639865835530145468}
+  - component: {fileID: 3254443739099046554}
+  - component: {fileID: 5132379222481467813}
   m_Layer: 2
   m_Name: Table2
   m_TagString: Rack
@@ -113,7 +114,7 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &-1639865835530145468
+--- !u!114 &3254443739099046554
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,13 +123,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1365657315777419805}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58cfc209aabb74647a6710eb7483f1f9, type: 3}
+  m_Script: {fileID: 11500000, guid: bf9d91aa5822f33459f4d1d6b7b23f5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gpuSprite: {fileID: 0}
-  gpuName: 
-  Income: 0
-  multiplier: 0
+  income: 0
+  heatProduction: 0
+  powerUsage: 0
+  slots: 0
+--- !u!114 &5132379222481467813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365657315777419805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01d3f891a857d274e91faa9eaff2c68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rackInventory: {fileID: 5956396077640372459, guid: 09e055f72d5327343a45a28fb409fe50, type: 3}
+  refRackInventory: {fileID: 0}
 --- !u!1 &1625522133481773181
 GameObject:
   m_ObjectHideFlags: 0

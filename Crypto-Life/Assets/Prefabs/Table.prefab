@@ -339,6 +339,8 @@ GameObject:
   - component: {fileID: 9006975517513554031}
   - component: {fileID: 5160999565937657530}
   - component: {fileID: 8693528984766149782}
+  - component: {fileID: -2031228036135321403}
+  - component: {fileID: 7948218602926778430}
   m_Layer: 2
   m_Name: Table
   m_TagString: Rack
@@ -397,6 +399,35 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &-2031228036135321403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6144336939812508104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf9d91aa5822f33459f4d1d6b7b23f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  income: 0
+  heatProduction: 0
+  powerUsage: 0
+  slots: 0
+--- !u!114 &7948218602926778430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6144336939812508104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01d3f891a857d274e91faa9eaff2c68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rackInventory: {fileID: 5956396077640372459, guid: 09e055f72d5327343a45a28fb409fe50, type: 3}
 --- !u!1 &6908489699335781850
 GameObject:
   m_ObjectHideFlags: 0

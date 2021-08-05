@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ObjSelect : MonoBehaviour
+public class RackSelected : MonoBehaviour
 {
 
-    public GameObject inventorylvl1;
-  
+    public GameObject rackInventory;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -31,24 +31,21 @@ public class ObjSelect : MonoBehaviour
                     {
                         return;
                     }
-                        
+
                     else
                     {
-                        inventorylvl1.transform.GetChild(0).gameObject.SetActive(true);
+                        rackInventory = hit.transform.gameObject;
+                        rackInventory.transform.GetChild(0).gameObject.SetActive(true);
 
-                        Transform g = hit.transform;
-                        print(g.name);
-                        ObjectStats t = g.GetComponent<ObjectStats>();
-                        print("T NULL: " + (t == null));
-
-                        print("T TYPE: " + t.GetType());
-                        inventorylvl1.GetComponent<RackInventory>().loadData(t);
                     }
-                    
+
                 }
-  
+
             }
 
         }
     }
+
 }
+
+    

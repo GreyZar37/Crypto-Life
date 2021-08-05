@@ -8,9 +8,9 @@ TagManager:
   - Wall
   - Blueprint
   - PlayerInventory
-  - ActiveRack
   - PlayerInventoryPanel
   - Rack
+  - StoragePanel
   layers:
   - Default
   - TransparentFX
@@ -18,7 +18,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Post Processing
   - 
   - 
   - 

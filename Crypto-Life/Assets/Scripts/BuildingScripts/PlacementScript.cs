@@ -32,7 +32,7 @@ public class PlacementScript : MonoBehaviour
 
     public void placementFunction()
     {
-
+        //TODO optimize
         if (buildMode == true)
         {
             allRacksInScene = GameObject.FindGameObjectsWithTag("Rack");
@@ -53,15 +53,11 @@ public class PlacementScript : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown(KeyCode.R) && rotation == 0)
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            rotation = 90f;
+            rotation += 90f;
         }
-        else if (Input.GetKeyDown(KeyCode.R) && rotation == 90)
-        {
-            rotation = 0f;
-        }
-
+  
         if (Input.GetMouseButtonDown(0) && buildMode == true)
         {
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitPosition))
@@ -71,8 +67,10 @@ public class PlacementScript : MonoBehaviour
                     placePosition = hitPosition.point;
                     if (canPlace == true)
                     {
+                     
                         Instantiate(currentRackPrefab.rackPrefab, placePosition, Quaternion.Euler(0f, rotation, 0f));
                         buildMode = false;
+                        rotation = 0f;
                     }
 
                 }

@@ -7,13 +7,15 @@ using TMPro;
 public class ServerRackItem : MonoBehaviour
 {
 
+    // TODO Optimere senere
+    public static int slots;
+
     public TextMeshProUGUI priceText, rackNameText, storageAmountText;
     public Image rackImage;
     public Button button;
 
-   
-
-    ServerRack serverRack;
+    [SerializeField]
+    public ServerRack serverRack;
 
     private void Start()
     {
@@ -33,9 +35,11 @@ public class ServerRackItem : MonoBehaviour
 
     void onClick()
     {
-        // TODO Optimere dette senere
-
+        // TODO Optimere senere
+        slots = serverRack.slots;
         GameObject.FindObjectOfType<PlacementScript>().placementInfo(serverRack);
+        GameObject.FindObjectOfType<GameManager>().closeShopMenu();
+        
 
         if (PlacementScript.buildMode == false)
         {

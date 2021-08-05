@@ -39,9 +39,9 @@ public class EquipmentController : MonoBehaviour
         //miners
         miners = new List<MinerEquipment>();
 
-        miners.Add(new MinerEquipment("GX 108", 20, miners.Count, rackIcons[0], 0.00001f, 1f, 2));
-        miners.Add(new MinerEquipment("GX 112", 100, miners.Count, rackIcons[0], 0.00008f, 3f, 4));
-        miners.Add(new MinerEquipment("GX 200", 250, miners.Count, rackIcons[0], 0.00012f, 5f, 8));
+        miners.Add(new MinerEquipment("GX 18", 20, miners.Count, gpuSourcesIcons[0], 0.0001f, 1f, 2, 0));
+        miners.Add(new MinerEquipment("GX 32", 100, miners.Count, gpuSourcesIcons[1], 0.0008f, 3f, 4, 0));
+        miners.Add(new MinerEquipment("GX 64", 250, miners.Count, gpuSourcesIcons[2], 0.0012f, 5f, 8, 0));
 
         //serverRacks
         serverRacks = new List<ServerRack>();
