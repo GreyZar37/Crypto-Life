@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class RackSelected : MonoBehaviour
+public class Raycast : MonoBehaviour
 {
     GameObject refToRack;
-    GameObject EquipButton;
+    public GameObject currentSelectedGameObject;
+    public Button equipButton;
 
     // Start is called before the first frame update
     void Start()
@@ -24,26 +25,33 @@ public class RackSelected : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+
+            currentSelectedGameObject = EventSystem.current.currentSelectedGameObject;
+          
+            if(currentSelectedGameObject != null)
+            {
+                if (currentSelectedGameObject.transform.gameObject.tag == "EquipButton")
+                {
+                    equipButton = currentSelectedGameObject.GetComponent<Button>();
+                }
+                else
+                {
+                    return;
+                }
+            }
+           
+
             if (Physics.Raycast(ray, out hit, 100))
             {
 
-                if (hit.collider.tag == "EquipButton")
+                if (hit.transform.tag == "Rack")
                 {
-                    EquipButton = hit.transform.gameObject;
-                    print(EquipButton.name);
 
-                }
-                
-
-
-                else if (hit.transform.tag == "Rack")
-                {
+                  
                     if (EventSystem.current.IsPointerOverGameObject())
                     {
                         return;
-
                     }
-
                     else
                     {
                         refToRack = hit.transform.gameObject;
@@ -54,6 +62,7 @@ public class RackSelected : MonoBehaviour
                 }
 
             }
+         
 
         }
 
