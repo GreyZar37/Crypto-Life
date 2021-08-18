@@ -14,6 +14,5 @@ public class RackStats : MonoBehaviour
     private void Awake()
     {
         slots = ServerRackItem.slots;
-        print(slots);
     }
 }

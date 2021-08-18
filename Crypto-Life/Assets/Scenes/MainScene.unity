@@ -2550,7 +2550,6 @@ GameObject:
   - component: {fileID: 985946606}
   - component: {fileID: 985946605}
   - component: {fileID: 985946607}
-  - component: {fileID: 985946608}
   - component: {fileID: 985946609}
   - component: {fileID: 985946610}
   - component: {fileID: 985946611}
@@ -2614,19 +2613,6 @@ MonoBehaviour:
   powerMenu: {fileID: 2033194273}
   coolersMenu: {fileID: 605682035}
   minerMenu: {fileID: 1985105009}
---- !u!114 &985946608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 985946604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7692268ab3871044bd1d2fa6407b7d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rackInventory: {fileID: 0}
 --- !u!114 &985946609
 MonoBehaviour:
   m_ObjectHideFlags: 0

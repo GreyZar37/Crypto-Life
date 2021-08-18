@@ -13,6 +13,7 @@ public class RackInventoryCreator : MonoBehaviour
         refRackInventory = Instantiate(rackInventory);
 
         refRackInventory.GetComponent<CreateNewGpuSlot>().slots = GetComponent<RackStats>().slots;
+
     }
 
    

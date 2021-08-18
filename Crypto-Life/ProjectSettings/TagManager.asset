@@ -11,6 +11,7 @@ TagManager:
   - PlayerInventoryPanel
   - Rack
   - StoragePanel
+  - EquipButton
   layers:
   - Default
   - TransparentFX
